@@ -1,0 +1,23 @@
+models:
+  - name: spotify_ad_sets
+    description: view of the adset object
+    columns:
+      - name: ad_set_id
+        description: ad set primary key
+        tests:
+          - unique
+  - name: spotify_campaigns
+    columns:
+      - name: campaign_id
+        description: campaign primary key
+        tests:
+          - unique
+
+  - name: spotify_ads
+    columns:
+      - name: ad_id
+        description: ads primary key
+        tests:
+          - unique
+
+                 

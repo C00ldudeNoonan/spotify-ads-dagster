@@ -1,0 +1,24 @@
+name: 'spotify_ads_dbt'
+config-version: 2
+version: '1.0.0'
+
+profile: 'datawarehouse'
+
+
+
+model-paths: ["models"]
+
+target-path: "target"
+clean-targets:
+    - "target"
+    - "dbt_modules"
+    - "logs"
+
+models:
+  spotify_accounts:
+    materialized: view
+    config:
+      meta:
+        dagster:
+          group: marketing
+  

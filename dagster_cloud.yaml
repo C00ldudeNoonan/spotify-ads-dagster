@@ -1,0 +1,5 @@
+locations:
+- code_source:
+    package_name: spotify_ads
+  location_name: lindenwarehousebigquery
+

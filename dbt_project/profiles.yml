@@ -1,0 +1,30 @@
+config:
+  send_anonymous_usage_stats: false
+
+datawarehouse:
+  outputs:
+    spotify:
+      dataset: spotify_ads
+      job_execution_timeout_seconds: 60
+      job_retries: 1
+      location: us-east5
+      method: service-account-json
+      priority: interactive
+      project: linden-data-warehouse
+      threads: 5
+      type: bigquery
+      keyfile_json:
+        type: service_account
+        project_id: 'linden-data-warehouse'
+        private_key_id: '{{ env_var("PRIVATE_KEY_ID") }}'
+        private_key: '{{ env_var("PRIVATE_KEY") }}'
+        client_email: '{{ env_var("CLIENT_EMAIL") }}'
+        client_id: '{{ env_var("CLIENT_ID") }}'
+        auth_uri: '{{ env_var("AUTH_URI") }}'
+        token_uri: '{{ env_var("TOKEN_URI") }}'
+        auth_provider_x509_cert_url: '{{ env_var("AUTH_PROVIDER_X509_CERT_URL") }}'
+        client_x509_cert_url: '{{ env_var("CLIENT_X509_CERT_URL") }}'
+        universe_domain: googleapis.com
+  target: spotify
+
+

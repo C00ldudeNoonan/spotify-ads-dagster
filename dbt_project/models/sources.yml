@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: spotify_ads
+    tables:
+      - name: accounts
+        meta:
+          dagster:
+            asset_key: ["accounts"]
+      - name: ads
+        meta:
+          dagster:
+            asset_key: ["ads"]
+      - name: campaigns
+        meta:
+          dagster:
+            asset_key: ["campaigns"]         
+      - name: ad_sets
+        meta:
+          dagster:
+            asset_key: ["ad_sets"]        
+      - name: incremental_refresh_ad_stats_daily
+        meta:
+          dagster:
+            asset_key: ["incremental_refresh_ad_stats_daily"]
