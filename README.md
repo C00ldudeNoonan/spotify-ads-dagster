@@ -2,7 +2,7 @@
  Repo for ingesting spotify ads data into bigquery using Dagster and dbt. This repo will should be helpful for anyone that needs to ingest Spotify ads data for reporting into a data warehouse. 
 
 # Dagster Assets
-![Dagster Asset Graph](./Spotify-ads-full-view.png)
+![Dagster Asset Graph](./Spotify-ads-full-view.PNG)
 
 
 I have Dagster assets that materialize the main entities that you can pull from the Spotify Ads API (Accounts, Campaigns, Ad Sets, Ads), The daily performance history going back to the beginning of the account, and an incremental refresh of daily ad sets that goes back to the start of the previous month to today. I use pandas dataframes as the main asset input and output and configured the BigQuery i/o manager for this. 
