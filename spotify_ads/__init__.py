@@ -20,13 +20,13 @@ defs = Definitions(
         "io_manager": BigQueryPandasIOManager(
             project=EnvVar("BIGQUERY_PROJECT_ID"),
             dataset=EnvVar("BIGQUERY_DATASET_ID"),
-            gcp_credentials=EnvVar("BIGQUERY_SERVICE_ACCOUNT_CREDENTIALS"),
+            #gcp_credentials=EnvVar("BIGQUERY_SERVICE_ACCOUNT_CREDENTIALS"),
         ),
         "bigquery":BigQueryResource(
             project=EnvVar("BIGQUERY_PROJECT_ID"),
-            credentials=EnvVar("BIGQUERY_SERVICE_ACCOUNT_CREDENTIALS"),
+            #credentials=EnvVar("BIGQUERY_SERVICE_ACCOUNT_CREDENTIALS"),
         ),
-        "dbt": DbtCliResource(project_dir=DBT_PROJECT_DIR, dbt_manifest_path=dbt_manifest_path) ,
+        "dbt": DbtCliResource(project_dir=DBT_PROJECT_DIR) ,
     },
     schedules=[daily_refresh],
 )

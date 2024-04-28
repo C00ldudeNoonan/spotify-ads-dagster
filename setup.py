@@ -5,7 +5,7 @@ setup(
     packages=find_packages(exclude=["quickstart_gcp_tests", "quickstart_gcp"]),
     package_data={"spotify_ads": ["spotify_ads_dbt/*"]},
     install_requires=[
-        "dagster==1.5.13",
+        "dagster",
         "dagster-gcp",
         "dagster-gcp-pandas",
         "dagster-cloud",
@@ -16,7 +16,6 @@ setup(
         "pandas",       
         "pandas_gbq",
         "google-auth",
-        "dagster-fivetran"
     ],
     extras_require={"dev": ["dagster-webserver==1.5.13", "pytest"]},
 )
