@@ -52,7 +52,8 @@ def get_ads_stats(token, ad_id, start_date, end_date, ad_account_id):
         time.sleep(10)
         stats = requests.get(report_endpoint, headers=headers)
     
-    #print(stats.status_code)
+    print(stats.status_code)
+    print(stats.text)
     if stats.status_code != 200:
         print(stats.text)
     if 'rows' not in stats.json():
