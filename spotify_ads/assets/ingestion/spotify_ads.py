@@ -1,6 +1,5 @@
 import requests
 from dagster import asset, AssetExecutionContext, MetadataValue
-# from ..partitions import monthly_partition
 import pandas as pd
 import os
 from datetime import datetime, timedelta
@@ -110,8 +109,8 @@ def get_new_token()-> str:
     data = {
         "grant_type": "refresh_token",
         "refresh_token": refresh_token,
-        "client_id": "4717de5d14ca47a288cd0f63ab195144",
-        "client_secret": "767f6f11016c492980e6372b3dbeab6d",
+        "client_id": "",
+        "client_secret": "",
     }
     response = requests.post(url, data=data)
     access_token = response.json()['access_token']
