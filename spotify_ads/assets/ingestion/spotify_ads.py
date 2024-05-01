@@ -109,8 +109,8 @@ def get_new_token()-> str:
     data = {
         "grant_type": "refresh_token",
         "refresh_token": refresh_token,
-        "client_id": "",
-        "client_secret": "",
+        "client_id": os.environ['SPOTIFY_CLIENT_ID'],
+        "client_secret": os.environ['SPOTIFY_CLIENT_SECRET'],
     }
     response = requests.post(url, data=data)
     access_token = response.json()['access_token']
